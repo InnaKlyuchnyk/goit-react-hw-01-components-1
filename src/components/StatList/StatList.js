@@ -18,5 +18,11 @@ export default function StatList({ title, stats }) {
 
 StatList.propTypes = {
   title: PropTypes.string,
-  //   stats: PropTypes.shape,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
